@@ -1,0 +1,699 @@
+<!DOCTYPE html><html lang="en" data-qb-installed="true"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style> /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2, h3 {
+    color: #222;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header Styles */
+header {
+    background: #007BFF;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header h1 {
+    text-align: center;
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+}
+
+/* Section Styles */
+.section {
+    margin: 40px 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* Projects List Styles */
+.projects-list {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.projects-list li {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.projects-list li:last-child {
+    border-bottom: none;
+}
+
+.projects-list strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    color: #007BFF;
+}
+
+.projects-list p {
+    margin: 0;
+}
+
+
+.skills-list, .qualifications-list, .certifications-list, .accomplishments-list, .experience-list {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skills-list li, .qualifications-list li, .certifications-list li, .accomplishments-list li, .experience-list li {
+    padding: 5px;
+}
+
+/* Profile Image */
+.profile-image {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #007BFF;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #222;
+    color: #ddd;
+}
+
+header.dark-mode {
+    background-color: #444;
+}
+
+nav.dark-mode ul li a {
+    color: #ddd;
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3 {
+    color: #ddd;
+}
+
+/* Contact Section */
+#contact p {
+    text-align: center;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #007BFF;
+    color: white;
+}
+
+
+
+/* Default Light Mode */
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Button for Dark Mode Toggle */
+#toggle-dark-mode {
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #f9f9f9;
+}
+
+.container.dark-mode {
+    background-color: #2c2c2c;
+}
+
+a {
+    color: #007BFF;
+}
+
+a.dark-mode {
+    color: #4dabf7;
+}
+
+.projects-list,
+.skills-list,
+.qualifications-list,
+.experience-list,
+.certifications-list,
+.accomplishments-list {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .projects-list,
+body.dark-mode .skills-list,
+body.dark-mode .qualifications-list,
+body.dark-mode .experience-list,
+body.dark-mode .certifications-list,
+body.dark-mode .accomplishments-list {
+    background-color: #333;
+    color: #f9f9f9;
+}
+
+strong {
+    font-weight: bold;
+}
+
+/* Dark Mode Text Adjustments */
+body.dark-mode strong {
+    color: #f9f9f9;
+}
+
+
+#dark-mode-toggle:hover {
+    background-color: #0056b3;
+}
+
+/* QR Code */
+#qrcode {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+}
+</style>
+    <link rel="stylesheet" href="https://rajportfolio.tiiny.site/styles.css">
+<script defer="" data-domain="rajportfolio.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script><script type="text/javascript" src="https://tiiny.host/ad-script.js"></script><style type="text/css">.lf-progress {
+  -webkit-appearance: none;
+  -moz-apperance: none;
+  width: 100%;
+  /* margin: 0 10px; */
+  height: 4px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.lf-progress:focus {
+  outline: none;
+  border: none;
+}
+.lf-progress::-moz-range-track {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+.lf-progress::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  height: 13px;
+  width: 13px;
+  border: 0;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress::-moz-range-thumb {
+  -moz-appearance: none !important;
+  height: 13px;
+  width: 13px;
+  border: 0;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress::-ms-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.lf-progress::-ms-fill-lower {
+  background: #ccc;
+  border-radius: 3px;
+}
+.lf-progress::-ms-fill-upper {
+  background: #ccc;
+  border-radius: 3px;
+}
+.lf-progress::-ms-thumb {
+  border: 0;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress:focus::-ms-fill-lower {
+  background: #ccc;
+}
+.lf-progress:focus::-ms-fill-upper {
+  background: #ccc;
+}
+.lf-player-container :focus {
+  outline: 0;
+}
+.lf-popover {
+  position: relative;
+}
+
+.lf-popover-content {
+  display: inline-block;
+  position: absolute;
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -10px);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}
+
+.lf-popover-content.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0px);
+}
+
+.lf-player-btn-container {
+  display: flex;
+  align-items: center;
+}
+.lf-player-btn {
+  cursor: pointer;
+  fill: #999;
+  width: 14px;
+}
+
+.lf-player-btn.active {
+  fill: #555;
+}
+
+.lf-popover {
+  position: relative;
+}
+
+.lf-popover-content {
+  display: inline-block;
+  position: absolute;
+  background-color: #ffffff;
+  opacity: 1;
+
+  transform: translate(0, -10px);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+  padding: 10px;
+}
+
+.lf-popover-content.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0px);
+}
+
+.lf-arrow {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  bottom: -9px;
+  border-style: solid;
+  border-width: 10px 10px 0px 10px;
+}
+
+.lf-left-align,
+.lf-left-align .lfarrow {
+  left: 0;
+  right: unset;
+}
+
+.lf-right-align,
+.lf-right-align .lf-arrow {
+  right: 0;
+  left: unset;
+}
+
+.lf-text-input {
+  border: 1px #ccc solid;
+  border-radius: 5px;
+  padding: 3px;
+  width: 60px;
+  margin: 0;
+}
+
+.lf-color-picker {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 90px;
+}
+
+.lf-color-selectors {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lf-color-component {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.lf-color-component strong {
+  width: 40px;
+}
+
+.lf-color-component input[type='range'] {
+  margin: 0 0 0 10px;
+}
+
+.lf-color-component input[type='number'] {
+  width: 50px;
+  margin: 0 0 0 10px;
+}
+
+.lf-color-preview {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 5px;
+}
+
+.lf-preview {
+  height: 60px;
+  width: 60px;
+}
+
+.lf-popover-snapshot {
+  width: 150px;
+}
+.lf-popover-snapshot h5 {
+  margin: 5px 0 10px 0;
+  font-size: 0.75rem;
+}
+.lf-popover-snapshot a {
+  display: block;
+  text-decoration: none;
+}
+.lf-popover-snapshot a:before {
+  content: '⥼';
+  margin-right: 5px;
+}
+.lf-popover-snapshot .lf-note {
+  display: block;
+  margin-top: 10px;
+  color: #999;
+}
+.lf-player-controls > div {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.lf-player-controls > div:first-child {
+  margin-left: 0px;
+}
+.lf-player-controls > div:last-child {
+  margin-right: 0px;
+}
+</style></head>
+<body style="margin-bottom: 55px !important;"><div style="position: fixed !important; bottom: 0% !important; width: 100% !important; height: 55px !important; z-index: 9999 !important;"><a href="https://tiiny.host?ref=free-site">
+    <div style="padding: 10px !important; background: rgb(220,137,232) !important;
+background: linear-gradient(141deg, rgba(220,137,232,1) 0%, rgba(144,64,204,1) 100%) !important; height: 55px; text-align: center">
+      <img style="height: 35px !important; width: auto !important;" src="https://tiiny.host/assets/img/ad.png" alt="tiiny.host">
+    </div>
+  </a></div>
+    <header>
+        <div class="container">
+            <h1>RAJ ALI</h1>
+            <button id="toggle-dark-mode">Dark Mode</button>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#qualifications">Qualifications</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#Accomplishment">Accomplishment</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+   
+    <section id="profile" class="section">
+        <div class="container">
+            <h2>Profile Image</h2>
+            <img src="https://i.ibb.co/Xybc7ng/my-pic.jpg" alt="Profile Image" class="profile-image">
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p class="tiinyeditabletext tiinyedit tiinyeditablefocused" contenteditable="true" data-qb-tmp-id="lt-779095" spellcheck="false" data-gramm="false"><p class="tiinyeditabletext">Hello! I am a passionate and dedicated Computer Science Engineering (CSE) diploma student with a strong interest in web development, software engineering, data science, and data analytics. Throughout my studies, I have developed a solid foundation in programming languages like C, C++, and web technologies such as HTML, CSS, and JavaScript. Additionally, I have explored data analysis tools like Python (pandas, NumPy, and matplotlib), SQL, and Excel, which have enhanced my ability to extract insights from complex datasets.</p><p>I enjoy learning about new technologies, including machine learning and data visualization, and applying my knowledge to real-world projects. Currently, I am focused on building my skills in full-stack web development and data-driven decision-making to contribute to innovative and impactful solutions. I am eager to explore opportunities that allow me to grow professionally while leveraging my diverse skill set to make a positive impact in the tech industry.</p></p>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>HTML</li>
+                <li>CSS(Bootstrap, Bulma)</li>
+                <li>JavaScript(React.js, Angular)</li>
+                <li>C</li>
+                <li>C++</li>
+                <li>Python(Pandas, NumPy)</li>
+                <li>SQL (querying, data
+manipulation, joins)</li>
+                <li>DBMS(MySQL, PostgreSQL, Oracle Database, Microsoft SQL Server)</li>
+                <li>AWS</li>
+                <li>Google Cloud</li>
+                <li>Google Analytics</li>
+                <li>Proficient in Microsoft Office</li>
+                <li>AI Integration and Productivity
+Mindset</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="softskills" class="section">
+        <div class="container">
+            <h2>Soft Skills</h2>
+            <ul class="skills-list">
+                <li>Problem-Solving</li>
+                <li>Teamwork</li>
+                <li>Time Management</li>
+                <li>Communication</li>
+                <li>Adaptability</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+    <div class="container">
+        <h2>Projects</h2>
+        <ul class="projects-list">
+            <li>
+                <strong>Project 1: Personal Portfolio</strong>
+                <p>A responsive portfolio website to showcase my skills and projects.</p>
+            </li>
+            <li>
+                <strong>Project 2: E-Commerce Website</strong>
+                <p>Developed a full-stack e-commerce platform using HTML, CSS, JavaScript, and Node.js.</p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+    <section id="experience" class="section">
+        <div class="container">
+            <h2>Experience</h2>
+            <ul class="experience-list">
+                <li>
+                    <h3>AWS APAC Solutions Architecture Virtual Experience Program</h3>
+                    <strong>Amazon Web Services (AWS)</strong> <br>
+                    August 2024
+                    <p>
+                        - Designed a simple and scalable hosting architecture based on Elastic Beanstalk for a client experiencing significant growth and slow response times.<br>
+                        - Described the proposed architecture in plain language to ensure the client understood how it works and how costs will be calculated.
+                    </p>
+                </li>
+                <li>
+                    <h3>Tata Cybersecurity Security Analyst Job Simulation</h3>
+                    <strong>Tata Consultancy Services (TCS)</strong> <br>
+                    September 2024
+                    <p>
+                        - Completed a job simulation involving identity and access management (IAM) for Tata Consultancy Services, collaborating with a Cybersecurity Consulting team.<br>
+                        - Acquired expertise in IAM principles, cybersecurity best practices, and strategic alignment with business objectives.<br>
+                        - Delivered comprehensive documentation and presentations, showcasing the ability to communicate complex technical concepts effectively.
+                    </p>
+                </li>
+                <li>
+                    <h3>Goldman Sachs Software Engineering Virtual Experience Program</h3>
+                    <strong>Goldman Sachs</strong> <br>
+                    October 2024
+                    <p>
+                        - Completed a job simulation as a Goldman Sachs governance analyst responsible for assessing IT security and suggesting improvements.<br>
+                        - Identified outdated password hashing algorithms by cracking passwords using Hashcat.<br>
+                        - Wrote a memo summarizing proposed uplifts to enhance password protection, including extending password length and using a dedicated hashing algorithm.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="qualifications" class="section">
+        <div class="container">
+            <h2>Qualifications</h2>
+            <ul class="qualifications-list">
+                <li>
+                    <strong>Diploma in Computer Science Engineering</strong><br>
+                    NIMS UNIVERSITY RAJASTHAN – Anticipated Graduation: May 2025
+                </li>
+                <li>
+                    <strong>Senior Secondary Education</strong><br>
+                    NBS MILLS HIGH SCHOOL NARAIPUR, BAGAHA – Completed: April 2021
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="certifications" class="section">
+        <div class="container">
+            <h2>Certifications</h2>
+            <ul class="certifications-list">
+                <li><strong>Python (Beginner Level)</strong><br>University of Leeds – Completed: September 2024</li>
+                <li><strong>Digital Skills: Artificial Intelligence</strong><br>Accenture – Completed: August 2024</li>
+                <li><strong>AI for All: From Basics to GenAI Practice</strong><br>Nvidia Academy – Completed: August 2024</li>
+                <li><strong>Google Analytics</strong><br>Skillshop – Completed: July 2024</li>
+                <li><strong>Front-End Development in HTML, CSS, JS</strong><br>Great Learning – Completed: March 2024</li>
+                <li><strong>Microsoft Office Specialist: Expert (Office 365 and
+Office 2021)</strong><br>Edraak إدراك – Completed: August 2024</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="accomplishments" class="section">
+        <div class="container">
+            <h2>Accomplishments</h2>
+            <ul class="accomplishments-list">
+                <li><strong>Certificate of CSS</strong><br>HackeRank: June 2024</li>
+                <li><strong>Certificate of JavaScript</strong><br>HackeRank: October 2023</li>
+                <li><strong>Certificate of Python Programming Language</strong><br>HackeRank: October 2024</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:ha2330232@gmail.com">ha2330232@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/raj-ali62054" target="_blank">Raj Ali</a></p>
+            <p>Mobile no: <a href="tel:+6205440744">6205440744</a></p>
+            <p>Scan for Portfolio:</p>
+            <div id="qrcode"></div> <!-- QR Code section for Portfolio -->
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 RAJ ALI. All rights reserved.</p>
+    </footer>
+
+    <script> 
+    document.getElementById('toggle-dark-mode').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+    
+    // Loop through sections and add dark mode class to the container
+    const sections = document.querySelectorAll('.container');
+    sections.forEach(section => {
+        section.classList.toggle('dark-mode');
+    });
+
+    // Update anchor links to match dark mode styling
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+        link.classList.toggle('dark-mode');
+    });
+});
+</script>
+
+
+<qb-toolbar contenteditable="false" class="qb--mac-os" id="qb-toolbar-container" style="display: none;"><qb-div class="qb-toolbar__wrapper qb-toolbar--small" style="left: 1098px; position: absolute !important; top: 877px !important; bottom: auto !important; z-index: auto;"><qb-div><qb-div></qb-div></qb-div></qb-div></qb-toolbar></body></html>

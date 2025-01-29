@@ -242,6 +242,125 @@ body.dark-mode strong {
     justify-content: center;
     margin-top: 20px;
 }
+/* General layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;  /* To prevent horizontal scroll */
+}
+
+.chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%; /* To keep the circular shape */
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.chatbot-icon img {
+    width: 50px; /* Adjust size of the image */
+    height: 50px; /* Adjust size of the image */
+    border-radius: 50%; /* Make the image circular if necessary */
+}
+
+/* Default Light Mode */
+.chatbox {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 80px;  /* Position it above the chatbot icon */
+    right: 20px;
+    background-color: white;
+    color: black; /* Text color for light mode */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 999;
+    padding: 10px;
+}
+
+.chatbox-content {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.bot-message, .user-message {
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+.bot-message {
+    background-color: #f1f1f1;
+    align-self: flex-start;
+    border: 1px solid #e0e0e0;
+}
+
+.user-message {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+    border: 1px solid #0056b3;
+}
+
+#user-input {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+#send-message {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#send-message:hover {
+    background-color: #0056b3;
+}
+
+/* Dark Mode */
+.dark-mode .chatbox {
+    background-color: black;
+    color: white; /* Text color for dark mode */
+}
+
+.dark-mode .bot-message {
+    background-color: #444;
+    border: 1px solid #666;
+}
+
+.dark-mode .user-message {
+    background-color: #0056b3;
+    color: white;
+}
+
+.dark-mode #user-input {
+    border: 1px solid #555;
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode #send-message {
+    background-color: #0056b3;
+    color: white;
+}
+
+.dark-mode #send-message:hover {
+    background-color: #003f8c;
+}
+
+
 
 @media (max-width: 768px) {
     .container {
@@ -428,6 +547,20 @@ Mindset</li>
         </div>
     </section>
 
+<!-- Chatbot Icon (Appears as a floating circle) -->
+    <div class="chatbot-icon" onclick="toggleChat()">
+        <img src="https://e7.pngegg.com/pngimages/498/917/png-clipart-computer-icons-desktop-chatbot-icon-blue-angle-thumbnail.png" alt="Chatbot Icon">
+    </div>
+
+    <!-- Chatbox -->
+    <div id="chatbox" class="chatbox">
+        <div id="chatbox-content" class="chatbox-content">
+            <div class="bot-message">Hello! How can I assist you today?</div>
+        </div>
+        <input type="text" id="user-input" placeholder="Type your message here..." onkeydown="if(event.key === 'Enter') sendMessage()">
+        <button id="send-message" onclick="sendMessage()">Send</button>
+    </div>
+    
     <section id="contact" class="section">
         <div class="container">
     <h2>Contact</h2>
@@ -472,6 +605,69 @@ Mindset</li>
             toggleIcon.textContent = '🌙';  // Moon icon for dark mode (when light mode is on)
         }
     });
+    
+    // Toggle chatbox visibility on icon click
+function toggleChat() {
+    const chatbox = document.getElementById('chatbox');
+    // Toggle the display of the chatbox
+    chatbox.style.display = chatbox.style.display === 'none' || chatbox.style.display === '' ? 'block' : 'none';
+}
+
+// Function to handle sending and receiving messages
+function sendMessage() {
+    const userInput = document.getElementById('user-input').value;
+    if (userInput.trim() === "") return; // Do nothing if input is empty
+
+    const chatboxContent = document.getElementById('chatbox-content');
+    
+    // Display user's message
+    const userMessage = document.createElement('div');
+    userMessage.textContent = "You: " + userInput;
+    userMessage.classList.add('user-message'); // Add user message styling
+    chatboxContent.appendChild(userMessage);
+    
+    // Display chatbot's response
+    const chatbotMessage = document.createElement('div');
+    chatbotMessage.textContent = "WebGenie: " + getChatbotResponse(userInput);
+    chatbotMessage.classList.add('bot-message'); // Add bot message styling
+    chatboxContent.appendChild(chatbotMessage);
+
+    // Clear input field
+    document.getElementById('user-input').value = '';
+
+    // Scroll to the bottom of the chat log
+    chatboxContent.scrollTop = chatboxContent.scrollHeight;
+}
+
+// Expanded response function for the chatbot
+function getChatbotResponse(input) {
+    input = input.toLowerCase().trim();
+    
+    if (input.includes("hello") || input.includes("hi")) {
+        return "Hello! How can I assist you today?";
+    } else if (input.includes("portfolio")) {
+        return "You can check my portfolio here:(https://rajaliportfolio.vercel.app)";
+    } else if (input.includes("skills") || input.includes("technologies")) {
+        return "I am skilled in HTML, CSS (Bootstrap, Bulma), JavaScript (React.js, Angular), C, C++, Python (Pandas, NumPy), SQL, AWS, Google Cloud, Proficient in Microsoft Office and more!";
+    } else if (input.includes("projects") || input.includes("work")) {
+        return "I have worked on several projects, including: \n-'DreamTrip: Your Gateway to Endless Adventure'\n- 'eLibrary Portal: Organize, Access, and Empower Learning'\n- 'Real-Time Weather Forecast Application'\n- 'E-Commerce Website'\n- 'Personal Portfolio Website'";
+    } else if (input.includes("contact")) {
+        return "You can contact me via mobile no.6205440744, email at [ha2330232@gmail.com](mailto:ha2330232@gmail.com), LinkedIn at [linkedin.com/in/raj-ali07](https://www.linkedin.com/in/raj-ali07).";
+    } else if (input.includes("qualification")) {
+        return "I am currently pursuing a **Diploma in Computer Science Engineering** at **NIMS UNIVERSITY RAJASTHAN**, expected to graduate in May 2025. I also completed my Senior Secondary Education from **NBS Mills High School, Bagaha**.";
+    } else if (input.includes("experience") || input.includes("work experience")) {
+        return "I have completed virtual experience programs, including:\n- **AWS APAC Solutions Architecture** (AWS, Aug 2024)\n- **Cybersecurity Security Analyst Job Simulation** (TCS, Sep 2024)\n- **Software Engineering Virtual Experience Program** (Goldman Sachs, Oct 2024).";
+    } else if (input.includes("final year project")) {
+        return "My final year project is titled DreamTrip: Your Gateway to Endless Adventure', which is a web-based system for journey plain.";
+    } else if (input.includes("certifications") || input.includes("courses")) {
+        return "I hold certifications in:\n- **Python (Beginner Level)** - University of Leeds\n- **Digital Skills: AI** - Accenture\n- **AI for All: From Basics to GenAI** - Nvidia Academy\n- **Google Analytics** - Skillshop\n- **Front-End Development (HTML, CSS, JS)** - Great Learning\n- **Microsoft Office Specialist** - Edraak";
+    } else if (input.includes("chatbot")) {
+        return "I am a WebGenie designed to provide information about my portfolio, skills, projects, experience, and more. Ask me anything!";
+    } else {
+        return "Sorry, I didn't understand that. Could you please rephrase or ask about my portfolio, skills, projects, or contact information?";
+    }
+}
+
 </script>
 
 </body>

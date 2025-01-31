@@ -394,7 +394,7 @@ body {
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#qualifications">Qualifications</a></li>
                     <li><a href="#certifications">Certifications</a></li>
-                    <li><a href="#Accomplishment">Accomplishment</a></li>
+                    <li><a href="#accomplishment">Accomplishment</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -536,7 +536,7 @@ Mindset</li>
         </div>
     </section>
 
-    <section id="accomplishments" class="section">
+    <section id="accomplishment" class="section">
         <div class="container">
             <h2>Accomplishments</h2>
             <ul class="accomplishments-list">
@@ -642,27 +642,39 @@ function sendMessage() {
 // Expanded response function for the chatbot
 function getChatbotResponse(input) {
     input = input.toLowerCase().trim();
-    
+
     if (input.includes("hello") || input.includes("hi")) {
-        return "Hello! How can I assist you today?";
+        return "Hello! I am Raj Ali, a passionate and dedicated Computer Science Engineering (CSE) diploma student with a strong interest in web development, software engineering, data science, and data analytics. I have developed a solid foundation in programming languages like C, C++, and web technologies such as HTML, CSS, and JavaScript. I enjoy learning about new technologies and applying my knowledge to real-world projects.";
     } else if (input.includes("portfolio")) {
-        return "You can check my portfolio here:(https://rajaliportfolio.vercel.app)";
+        return "You can check my portfolio here: (https://rajaliportfolio.vercel.app)";
     } else if (input.includes("skills") || input.includes("technologies")) {
-        return "I am skilled in HTML, CSS (Bootstrap, Bulma), JavaScript (React.js, Angular), C, C++, Python (Pandas, NumPy), SQL, AWS, Google Cloud, Proficient in Microsoft Office and more!";
+        return "I am skilled in:\n- HTML\n- CSS (Bootstrap, Bulma)\n- JavaScript (React.js, Angular)\n- C\n- C++\n- Python (Pandas, NumPy)\n- SQL (querying, data manipulation, joins)\n- DBMS (MySQL, PostgreSQL, Oracle Database, Microsoft SQL Server)\n- AWS\n- Google Cloud\n- Google Analytics\n- Proficient in Microsoft Office\n- AI Integration and Productivity Mindset";
     } else if (input.includes("projects") || input.includes("work")) {
-        return "I have worked on several projects, including: \n-'DreamTrip: Your Gateway to Endless Adventure'\n- 'eLibrary Portal: Organize, Access, and Empower Learning'\n- 'Real-Time Weather Forecast Application'\n- 'E-Commerce Website'\n- 'Personal Portfolio Website'";
+        return "I have worked on several projects, including:\n- 'Personal Portfolio': A responsive portfolio website to showcase my skills and projects.\n- 'E-Commerce Website': Developed a full-stack e-commerce platform using HTML, CSS, JavaScript, and Node.js.";
     } else if (input.includes("contact")) {
-        return "You can contact me via mobile no.6205440744, email at [ha2330232@gmail.com](mailto:ha2330232@gmail.com), LinkedIn at [linkedin.com/in/raj-ali07](https://www.linkedin.com/in/raj-ali07).";
-    } else if (input.includes("qualification")) {
-        return "I am currently pursuing a **Diploma in Computer Science Engineering** at **NIMS UNIVERSITY RAJASTHAN**, expected to graduate in May 2025. I also completed my Senior Secondary Education from **NBS Mills High School, Bagaha**.";
+        return "You can contact me via mobile at 6205440744, email at [ha2330232@gmail.com], LinkedIn at [linkedin.com/in/raj-ali07]";
+    }  else if (input.includes("qualification")) {
+        return "I am currently pursuing a **Diploma in Computer Science Engineering** at **NIMS UNIVERSITY RAJASTHAN**, expected to graduate in May 2025. I completed my Senior Secondary Education at **NBS Mills High School, Bagaha**.";
     } else if (input.includes("experience") || input.includes("work experience")) {
-        return "I have completed virtual experience programs, including:\n- **AWS APAC Solutions Architecture** (AWS, Aug 2024)\n- **Cybersecurity Security Analyst Job Simulation** (TCS, Sep 2024)\n- **Software Engineering Virtual Experience Program** (Goldman Sachs, Oct 2024).";
+        return "I have completed virtual experience programs, including:\n- **AWS APAC Solutions Architecture** (AWS, Aug 2024): Designed a scalable hosting architecture based on Elastic Beanstalk.\n- **Cybersecurity Security Analyst Job Simulation** (TCS, Sep 2024): Collaborated with a Cybersecurity Consulting team on IAM principles.\n- **Software Engineering Virtual Experience Program** (Goldman Sachs, Oct 2024): Assessed IT security and suggested improvements.";
     } else if (input.includes("final year project")) {
-        return "My final year project is titled DreamTrip: Your Gateway to Endless Adventure', which is a web-based system for journey plain.";
+        return "My final year project is titled 'DreamTrip: Your Gateway to Endless Adventure', which is a web-based system for journey planning.";
     } else if (input.includes("certifications") || input.includes("courses")) {
         return "I hold certifications in:\n- **Python (Beginner Level)** - University of Leeds\n- **Digital Skills: AI** - Accenture\n- **AI for All: From Basics to GenAI** - Nvidia Academy\n- **Google Analytics** - Skillshop\n- **Front-End Development (HTML, CSS, JS)** - Great Learning\n- **Microsoft Office Specialist** - Edraak";
-    } else if (input.includes("chatbot")) {
-        return "I am a WebGenie designed to provide information about my portfolio, skills, projects, experience, and more. Ask me anything!";
+    } else if (input.includes("accomplishments") || input.includes("achievements")) {
+        return "I have received several certificates, including:\n- **Certificate of CSS** - HackeRank (June 2024)\n- **Certificate of JavaScript** - HackeRank (October 2023)\n- **Certificate of Python Programming Language** - HackeRank (October 2024)";
+    } else if (input.includes("Data science") || input.includes("data science")) {
+        return "I have a strong interest in machine learning and data science, and I am currently exploring various tools and techniques in these fields.";
+    } else if (input.includes("hobbies") || input.includes("interests")) {
+        return "In my free time, I enjoy learning about new technologies, working on personal projects, and exploring the latest trends in web development and data analytics.";
+    } else if (input.includes("future goals") || input.includes("career aspirations")) {
+        return "My goal is to become a proficient full-stack developer and data scientist, contributing to innovative projects that make a positive impact in the tech industry.";
+    } else if (input.includes("soft skills")) {
+        return "I possess several soft skills, including:\n- Problem-Solving\n- Teamwork\n- Time Management\n- Communication\n- Adaptability";
+    } else if (input.includes("ai integration")) {
+        return "I am interested in AI integration and how it can enhance productivity and decision-making in various applications.";
+    } else if (input.includes("cloud computing")) {
+        return "I have experience with cloud platforms like AWS and Google Cloud, which I use for deploying applications and managing data.";
     } else {
         return "Sorry, I didn't understand that. Could you please rephrase or ask about my portfolio, skills, projects, or contact information?";
     }

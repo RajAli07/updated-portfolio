@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="icon" href="https://assets.onecompiler.app/436645ybn/438jqck34/DALL%C2%B7E%202025-02-09%2018.41.37%20-%20A%20modern%20and%20minimalistic%20logo%20featuring%20only%20the%20capital%20letters%20'RA'%20in%20a%20bold,%20futuristic%20font.%20The%20background%20should%20have%20a%20sleek%20black,%20blue,%20or%20%20(1).jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style> /* General Styles */
 body {
     font-family: Arial, sans-serif;
@@ -80,27 +82,78 @@ h2 {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .projects-list li {
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 15px;
     border-bottom: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease-in-out;
 }
 
 .projects-list li:last-child {
     border-bottom: none;
 }
 
+/* Project Title */
 .projects-list strong {
     display: block;
     margin-bottom: 5px;
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: #007BFF;
 }
 
+/* Description */
 .projects-list p {
-    margin: 0;
+    margin: 10px 0;
+    font-size: 0.95em;
+    color: #333;
+}
+
+/* Project Image Styling */
+.projects-list li img {
+    width: 100%;
+    max-width: 400px; /* Adjust image max size */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Image Hover Effect */
+.projects-list li img:hover {
+    transform: scale(1.05);
+}
+
+/* "View Project" Button Styling */
+.projects-list li a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.projects-list li a:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Grid Layout for Larger Screens */
+@media (min-width: 768px) {
+    .projects-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
 }
 
 
@@ -147,6 +200,25 @@ nav.dark-mode ul li a {
 #contact p {
     text-align: center;
 }
+
+/* Social Media Icons Styling */
+#contact .social-icons {
+    margin-top: 15px;
+    text-align: center;
+}
+
+#contact .social-icons a {
+    text-decoration: none;
+    color: gray;
+    font-size: 2em;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+#contact .social-icons a:hover {
+    color: #6759ff; /* Hover effect */
+}
+
 
 /* Footer Styles */
 footer {
@@ -453,30 +525,45 @@ Mindset</li>
         </div>
     </section>
 
-    <section id="projects" class="section">
+   <section id="projects" class="section">
     <div class="container">
         <h2>Projects</h2>
         <ul class="projects-list">
             <li>
                 <strong>Project 1: Personal Portfolio</strong>
                 <p>A responsive portfolio website to showcase my skills and projects.</p>
-                <a href="https://rajaliportfolio.vercel.app/" target="_blank">View Project</a>
+                <a href="https://rajaliportfolio.vercel.app/" target="_blank">
+                    <img src="https://assets.onecompiler.app/42nyakuzq/43c79jdn4/Screen%20Shot%202025-03-19%20at%201.48.34%20PM.png" alt="Personal Portfolio Screenshot">
+                    View Project
+                </a>
             </li>
             <li>
                 <strong>Project 2: Aheli Fresh Fusion</strong>
                 <p>A vibrant website showcasing fresh and fusion dishes with their prices, built using HTML, CSS, and JavaScript.</p>
-                <a href="https://ahelifreshfusionbyraj.vercel.app/" target="_blank">View Project</a>
+                <a href="https://ahelifreshfusionbyraj.vercel.app/" target="_blank">
+                    <img src="https://assets.onecompiler.app/42nyakuzq/43c79jdn4/Screen%20Shot%202025-03-19%20at%201.53.14%20PM.png" alt="Aheli Fresh Fusion Screenshot">
+                    View Project
+                </a>
             </li>
             <li>
                 <strong>Project 3: Weather Forecast Website</strong>
                 <p>A real-time weather forecast website that provides live weather updates using APIs.</p>
-                <a href="https://liveweatherbyraj.vercel.app/" target="_blank">View Project</a>
+                <a href="https://liveweatherbyraj.vercel.app/" target="_blank">
+                    <img src="https://assets.onecompiler.app/42nyakuzq/43c79jdn4/Screen%20Shot%202025-03-19%20at%201.55.38%20PM.png" alt="Weather Forecast Screenshot">
+                    View Project
+                </a>
+            </li>
+            <li>
+                <strong>Project 4: RealTime Forex Converter</strong>
+                <p>A RealTime Forex Converter website to calculate currency value worldwide.</p>
+                <a href="https://realtimeforexconverter.vercel.app/" target="_blank">
+                    <img src="https://assets.onecompiler.app/42nyakuzq/43c79jdn4/Screen%20Shot%202025-03-19%20at%201.57.20%20PM.png" alt="Forex Converter Screenshot">
+                    View Project
+                </a>
             </li>
         </ul>
     </div>
 </section>
-
-
 
     <section id="experience" class="section">
         <div class="container">
@@ -571,23 +658,61 @@ Mindset</li>
     </div>
     
     <section id="contact" class="section">
-        <div class="container">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:ha2330232@gmail.com">ha2330232@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/raj-ali62054" target="_blank">Raj Ali</a></p>
-    <p>Mobile no: <a href="https://wa.me/+916205440744" target="_blank">Message on WhatsApp</a></p>
-    <p>Resume: <a href="https://drive.google.com/file/d/1KVLgGFLliEUwUKw0W2y09RfP-HCaO0iz/view?usp=sharing/view" target="_blank">View Resume (PDF)</a></p>
-    <p>Scan for Portfolio:</p>
-    <div id="qrcode"></div> <!-- QR Code section for Portfolio -->
-</div>
+    <div class="container">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:ha2330232@gmail.com">ha2330232@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/raj-ali62054" target="_blank">Raj Ali</a></p>
+        <p>Mobile no: <a href="https://wa.me/+916205440744" target="_blank">Message on WhatsApp</a></p>
+        <p>Resume: <a href="https://drive.google.com/file/d/1KVLgGFLliEUwUKw0W2y09RfP-HCaO0iz/view?usp=sharing/view" target="_blank">View Resume (PDF)</a></p>
+        <p>Scan for Portfolio:</p>
+        <div id="qrcode"></div> <!-- QR Code section for Portfolio -->
 
-    </section>
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="https://github.com/rajali07" target="_blank"><i class="fa fa-github"></i></a>
+            <a href="https://www.instagram.com/_asadstic_/" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://wa.me/+916205440744" target="_blank"><i class="fa fa-whatsapp"></i></a>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+        </div>
+    </div>
+</section>
 
     <footer>
         <p>&copy; 2024 RAJ ALI. All rights reserved.</p>
     </footer>
 
+    
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
+    $(document).ready(function () {
+      // Add smooth scrolling to all links
+      $("a").on("click", function (event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $("html, body").animate(
+            {
+              scrollTop: $(hash).offset().top,
+            },
+            800,
+            function () {
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+            }
+          );
+        } // End if
+      });
+    });
+    
     document.getElementById('toggle-dark-mode').addEventListener('click', function() {
         // Toggle dark mode on body
         document.body.classList.toggle('dark-mode');

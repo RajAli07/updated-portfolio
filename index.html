@@ -89,16 +89,31 @@ h2 {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* ✨ Hover Effect for Projects */
+.projects-list li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image inside Project Cards */
 .projects-list img {
     width: 100%;
     height: auto;
-    max-height: 200px; /* Ensure images are not too big */
+    max-height: 200px;
     object-fit: cover;
     border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
+/* ✨ Hover Effect on Image */
+.projects-list li:hover img {
+    transform: scale(1.1);
+}
+
+/* View Project Button */
 .projects-list a {
     display: block;
     text-decoration: none;
@@ -107,14 +122,20 @@ h2 {
     padding: 10px;
     margin-top: 10px;
     border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
+/* ✨ Hover Effect on Button */
+.projects-list li:hover a {
+    background: darkblue;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .projects-list {
         grid-template-columns: 1fr;
     }
 }
-
 
 
 .skills-list, .qualifications-list, .certifications-list, .accomplishments-list, .experience-list {

@@ -76,6 +76,34 @@ h2 {
     text-align: center;
     margin-bottom: 20px;
 }
+:root {
+    --bg-color: white;
+    --text-color: black;
+    --card-bg: white;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --hover-shadow: rgba(0, 0, 0, 0.2);
+    --btn-bg: blue;
+    --btn-hover-bg: darkblue;
+}
+
+/* 🌙 Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #121212;
+        --text-color: #ffffff;
+        --card-bg: #1e1e1e;
+        --card-shadow: rgba(255, 255, 255, 0.1);
+        --hover-shadow: rgba(255, 255, 255, 0.2);
+        --btn-bg: #007bff;
+        --btn-hover-bg: #0056b3;
+    }
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
 .projects-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -84,18 +112,17 @@ h2 {
 }
 
 .projects-list li {
-    background: white;
+    background: var(--card-bg);
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--card-shadow);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ✨ Hover Effect for Projects */
 .projects-list li:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px var(--hover-shadow);
 }
 
 /* Image inside Project Cards */
@@ -118,7 +145,7 @@ h2 {
     display: block;
     text-decoration: none;
     color: white;
-    background: blue;
+    background: var(--btn-bg);
     padding: 10px;
     margin-top: 10px;
     border-radius: 5px;
@@ -127,7 +154,7 @@ h2 {
 
 /* ✨ Hover Effect on Button */
 .projects-list li:hover a {
-    background: darkblue;
+    background: var(--btn-hover-bg);
 }
 
 /* Responsive Design */
@@ -274,6 +301,13 @@ body.dark-mode .certifications-list,
 body.dark-mode .accomplishments-list {
     background-color: #333;
     color: #f9f9f9;
+}
+
+/* ✅ Fix for Projects Section */
+body.dark-mode .projects-list,
+body.dark-mode .projects-list li {
+    background-color: #333 !important;
+    color: #f9f9f9 !important;
 }
 
 strong {

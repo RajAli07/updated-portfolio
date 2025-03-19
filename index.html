@@ -76,85 +76,45 @@ h2 {
     text-align: center;
     margin-bottom: 20px;
 }
-/* Projects List Styles */
 .projects-list {
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+    padding: 20px;
 }
 
 .projects-list li {
+    background: white;
     padding: 15px;
-    border-bottom: 1px solid #ddd;
     border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    background-color: #f9f9f9;
-    transition: transform 0.3s ease-in-out;
 }
 
-.projects-list li:last-child {
-    border-bottom: none;
-}
-
-/* Project Title */
-.projects-list strong {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 1.2em;
-    color: #007BFF;
-}
-
-/* Description */
-.projects-list p {
-    margin: 10px 0;
-    font-size: 0.95em;
-    color: #333;
-}
-
-/* Project Image Styling */
-.projects-list li img {
+.projects-list img {
     width: 100%;
-    max-width: 400px; /* Adjust image max size */
     height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease-in-out;
+    max-height: 200px; /* Ensure images are not too big */
+    object-fit: cover;
+    border-radius: 8px;
 }
 
-/* Image Hover Effect */
-.projects-list li img:hover {
-    transform: scale(1.05);
-}
-
-/* "View Project" Button Styling */
-.projects-list li a {
-    display: inline-block;
+.projects-list a {
+    display: block;
     text-decoration: none;
-    background-color: #007bff;
     color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
+    background: blue;
+    padding: 10px;
     margin-top: 10px;
-    font-weight: bold;
-    transition: background-color 0.3s ease-in-out;
+    border-radius: 5px;
 }
 
-.projects-list li a:hover {
-    background-color: #0056b3;
-}
-
-/* Responsive Grid Layout for Larger Screens */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .projects-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
+        grid-template-columns: 1fr;
     }
 }
+
 
 
 .skills-list, .qualifications-list, .certifications-list, .accomplishments-list, .experience-list {
